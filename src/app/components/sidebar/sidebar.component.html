@@ -4,24 +4,33 @@
   <div class="logo-details">
     <img class="icon-profile-manager" src="assets/img/user-management.svg" alt="icon-management">
     <div class="logo_name">Profile Manager</div>
+    
   </div>
   <hr class="divider">
   <ul class="nav-list" >   
     <li *ngFor="let menu of menuItems">
       <a [ngClass]="{'active': selectedItem === menu.label}" (click)="activeItem( menu.label)">
-        <img class="icon" src="{{menu.icon}}" alt="icon-home">
+        <img class="icon" src="{{menu.icon}}" alt="icon">
         <span class="links_name">{{menu.label}}</span>
       </a>
+    </li>
+    <li class="profile">
+      <div class="profile-details">       
+        <div class="name_job">
+          <div class="name">Luca Verde</div> 
+          <div class="job">Admin</div>
+         
+        </div>
+        <img class="icon-logout" src="assets/img/logout.svg" alt="icon-logout">
+      </div>
+      
     </li>
   </ul>
 </div>
 <section class="home-section">
-  <div class="text">Dashboard</div>
+  <app-navbar></app-navbar>
+  <!-- <div class="text">Dashboard</div> -->
 </section>
 
 
 
-
-  <!-- <nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1">Navbar</span>
-  </nav> -->

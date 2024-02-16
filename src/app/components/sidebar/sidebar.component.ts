@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuItem } from '../../model/menu-item';
 import { MenuService } from '../../services/menu.service';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NavbarComponent],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
@@ -49,6 +50,5 @@ export class SidebarComponent implements OnInit{
  
   activeItem(name: any){
     this.selectedItem = name;
-    console.log("si", this.selectedItem)
   }
 }
