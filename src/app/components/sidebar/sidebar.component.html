@@ -6,36 +6,11 @@
     <div class="logo_name">Profile Manager</div>
   </div>
   <hr class="divider">
-  <ul class="nav-list">
-   
-    <li>
-      <a href="#">
-        <img class="icon" src="assets/img/home-page.svg" alt="icon-home">
-        <span class="links_name">Home</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <img class="icon" src="assets/img/profile.svg" alt="icon-profile">
-        <span class="links_name">Profili</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <img class="icon" src="assets/img/groups.svg" alt="icon-groups">
-        <span class="links_name">Gruppi</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <img class="icon-roles" src="assets/img/roles.svg" alt="icon-roles">
-        <span class="links_name">Ruoli</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <img class="icon" src="assets/img/modules.svg" alt="icon-modules">
-        <span class="links_name">Moduli</span>
+  <ul class="nav-list" >   
+    <li *ngFor="let menu of menuItems">
+      <a href="{{menu.href}}">
+        <img class="icon" src="{{menu.icon}}" alt="icon-home">
+        <span class="links_name">{{menu.label}}</span>
       </a>
     </li>
   </ul>

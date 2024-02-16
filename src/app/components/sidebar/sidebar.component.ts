@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MenuItem } from '../../model/menu-item';
+import { MenuService } from '../../services/menu.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,17 +10,25 @@ import { CommonModule } from '@angular/common';
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit{
   isOpen = false;
-  menuItems!: any[];
+  menuItems!: MenuItem[]
   selectedItem: any;
 
-  constructor() {
+  constructor(private menuService: MenuService) {
+  }
+  ngOnInit(): void {
+   this.menuService.getMenuItems().subscribe(
+    menuItemsList => {
+      this.menuItems = menuItemsList
+    }
+   );
+   console.log("menu", this.menuItems)
   }
 
   toggleDropdown(index: any) {
     switch(index) { 
-      case 0: { 
+      case 0: {    
         this.isOpen = !this.isOpen;
         break; 
       } 
@@ -34,10 +44,10 @@ export class SidebarComponent {
          //statements; 
          break; 
       } 
+       
    }
-   console.log("o", this.isOpen)
-    this.isOpen = !this.isOpen;
   }
+ 
 
   activeItem(name: any){
     this.selectedItem = name;
