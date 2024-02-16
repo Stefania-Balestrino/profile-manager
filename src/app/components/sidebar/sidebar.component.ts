@@ -12,12 +12,11 @@ import { NavbarComponent } from '../navbar/navbar.component';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent implements OnInit{
+  constructor(private menuService: MenuService) {}
   isOpen = false;
   menuItems!: MenuItem[]
   selectedItem: any;
 
-  constructor(private menuService: MenuService) {
-  }
   ngOnInit(): void {
    this.menuService.getMenuItems().subscribe(
     menuItemsList => {
