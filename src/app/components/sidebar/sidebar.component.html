@@ -8,7 +8,7 @@
   <hr class="divider">
   <ul class="nav-list" >   
     <li *ngFor="let menu of menuItems">
-      <a href="{{menu.href}}">
+      <a [ngClass]="{'active': selectedItem === menu.label}" (click)="activeItem( menu.label)">
         <img class="icon" src="{{menu.icon}}" alt="icon-home">
         <span class="links_name">{{menu.label}}</span>
       </a>
@@ -16,24 +16,12 @@
   </ul>
 </div>
 <section class="home-section">
-  <!-- <nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1">Navbar</span>
-  </nav> -->
   <div class="text">Dashboard</div>
 </section>
 
 
-<!-- <div class="bg-light border-right text-center" id="sidebar-wrapper" [ngClass]="{ 'active': isOpen }">
-	<div class="sidebar-heading">
-		<img id="logo" alt="logo" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-social-logo.png">
-		<div id="titulo"><strong>Awesome App</strong></div>
-	</div>
-	<div class="list-group list-group-flush">
-		<ng-container *ngFor="let item of menuItems">
-			<a class="list-group-item list-group-item-action bg-light" [ngClass]="{'active': selectedItem === item.name}" (click)="activeItem( item.name)"><i class="fa fa-lg" [ngClass]="item.icon"></i> <span class="option-name">{{item.name}} </span>
-				<span *ngIf="item.name === 'Home'" class="badge badge-dark">5</span></a>	
-			</ng-container>
-	</div> 
-</div> -->
 
 
+  <!-- <nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">Navbar</span>
+  </nav> -->

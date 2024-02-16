@@ -23,7 +23,6 @@ export class SidebarComponent implements OnInit{
       this.menuItems = menuItemsList
     }
    );
-   console.log("menu", this.menuItems)
   }
 
   toggleDropdown(index: any) {
@@ -48,8 +47,8 @@ export class SidebarComponent implements OnInit{
    }
   }
  
-
   activeItem(name: any){
     this.selectedItem = name;
+    console.log("si", this.selectedItem)
   }
 }
